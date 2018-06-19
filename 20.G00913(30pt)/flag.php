@@ -1,6 +1,7 @@
 <?php
   function prime($n) {
-    for ($d = 2; $d < $n; $d++) {
+    $s = sqrt($n);
+    for ($d = 2; $d < $s; $d++) {
       if ($n % $d == 0) {
         return false;
       }
@@ -11,7 +12,7 @@
   for ($i = 0; $i < strlen($pi) - 10; $i++) {
     $n = substr($pi, $i, 10);
     if (prime($n)) {
-      echo 'FLAG_Q20_' . $n;
+      echo 'FLAG_Q20_' . $n . PHP_EOL;
       exit;
     }
   }
